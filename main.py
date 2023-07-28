@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, request
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, Length
-from flask_bootstrap import Bootstrap5
+from flask_bootstrap import Bootstrap
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
@@ -11,7 +11,7 @@ class LoginForm(FlaskForm):
 
 app = Flask(__name__)
 app.secret_key = "HELLO_WORLD"
-bootstrap = Bootstrap5(app)
+bootstrap = Bootstrap(app)
 
 @app.route("/")
 def home():
